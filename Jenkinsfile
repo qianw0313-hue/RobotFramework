@@ -18,7 +18,7 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'python -m robot checkout.robot'
+                bat 'python -m robot tests\\checkout.robot'
             }
         }
     }
