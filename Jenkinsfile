@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/qianw0313-hue/RobotFramework.git'
+                git branch: 'main',
+                url: 'https://github.com/qianw0313-hue/RobotFramework.git'
             }
         }
 
