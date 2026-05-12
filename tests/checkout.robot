@@ -76,6 +76,26 @@ Cancel from checkout
     wait until page contains    Your Cart
     Close Browser
 
+Pipeline test case
+    Login And Add Product
+
+    Click Element    class:shopping_cart_link
+
+    Click Button    id:checkout
+
+    Input Text    id:first-name    John
+    Input Text    id:last-name     Smith
+    Input Text    id:postal-code   12345
+
+    Click Button    id:continue
+
+    Wait Until Page Contains    Checkout: Overview
+    Click Button    id:finish
+    Wait Until Page Contains
+    ...    Thank you for your order!
+    
+    Close Browser
+
 *** Keywords ***
 Open Chrome Browser
     ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
@@ -127,3 +147,4 @@ Login And Add Product
     Wait Until Page Contains    Products
 
     Click Button    id:add-to-cart-sauce-labs-backpack
+
