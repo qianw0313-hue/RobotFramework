@@ -76,7 +76,7 @@ Cancel from checkout
     wait until page contains    Your Cart
     Close Browser
 
-Pipeline test case
+Pipeline test case2
     Login And Add Product
 
     Click Element    class:shopping_cart_link
