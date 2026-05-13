@@ -18,14 +18,16 @@ pipeline {
 
         stage('Run Tests') {
             steps {
-                bat 'python -m robot tests\\checkout.robot'
+                bat 'python -m robot --listener allure_robotframework tests/checkout.robot'
             }
         }
     }
 
     post {
         always {
-            archiveArtifacts artifacts: '*.html'
+        allure includeProperties: false,
+               jdk: '',
+               results: [[path: 'allure-results']]
         }
     }
 }
